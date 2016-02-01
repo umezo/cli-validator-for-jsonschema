@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+var Validator = require('../');
+var files = process.argv.slice(2);
+
+
+files.forEach(function(filepath){
+  var validator = new Validator();
+  console.log("Validating:" + filepath);
+  validator.schemaFile(filepath);
+});
+
+
+
+
+

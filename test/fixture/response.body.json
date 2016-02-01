@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type":"object",
+  "properties":{
+    "data": {
+      "type":"object",
+      "properties": {
+        "mutes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "muteを表現したオブジェクト。もっと詳細なスキーマが記載されるかもしれない。mute.jsonからコピペしてほしい。",
+            "properties": {
+              "created_at":{
+                "type":"string"
+              },
+              "sender": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "id_type": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  }
+                }
+              },
+              "trigger": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "task": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "cursor": {
+          "type": "string"
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type":"integer",
+          "description": "このリクエストのhttp response status code。クライアントがAPI的にstatus codeにアクセス出来ない可哀想な言語向け。なんか悪い予感がするので文字列にしたけど強い意志はない"
+        }
+      }
+    }
+  }
+}
+
+
+
